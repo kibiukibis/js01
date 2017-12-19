@@ -35,11 +35,12 @@ var pcs = [
 
 var textOut = "";
 pcs.forEach(model => {
-    var spalvos;
+    var spalvos = "";
     if (model.kaina <= 800 && (model.spalva.juoda || model.spalva.balta) && (model.spalva.juoda >= 2 || model.spalva.balta >= 2)) {
-        if (model.spalva.juoda) spalvos = "juoda";
-        if (model.spalva.balta) spalvos = "balta";
-        if (model.spalva.juoda && model.spalva.balta) spalvos = "balta ir juoda";
+        if (model.spalva.juoda >= 2) spalvos = "juoda";
+        if (model.spalva.balta >= 2) spalvos = "balta";
+        if (model.spalva.juoda >= 2 && model.spalva.balta >= 2) spalvos = "balta ir juoda";
+
         textOut += `Modelis: ${model.modelis} Kaina: ${model.kaina*2} Spalvos: ${spalvos}\n`;
     }
 });

@@ -25,10 +25,10 @@ function longestWord(sen) {
     words = sen.split(" ");
     words.forEach(function(word) {
         if (word.length > bigWord.length) {
-            bigWord = word
+            bigWord = word;
         };
     });
-    return bigWord
+    return bigWord;
 };
 
 

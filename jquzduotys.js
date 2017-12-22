@@ -17,6 +17,11 @@ $(document).ready(function() {
     });
 
     $("#accept").change(function() {
-        $("#submitbtn").removeAttr('disabled');
+        if ($(this).is(':checked')) {
+            $("#submitbtn").removeAttr('disabled');
+        } else {
+            $("#submitbtn").attr('disabled', 'disabled');
+        }
     });
+
 });
